@@ -1,0 +1,8 @@
+defaultSettings:
+  indentRules:
+    displayMath: 0
+    item: "    "  # 4 espaços para itens
+    environment: 2  # Indentação para \begin/\end
+  modifyLineBreaks: yes
+  oneSentencePerLine: yes  # Força quebras por frase
+  removeTrailingWhitespace: yes

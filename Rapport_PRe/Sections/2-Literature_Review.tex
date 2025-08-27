@@ -1,0 +1,31 @@
+\section{Literature Review}
+This review situates our work at the intersection of explainable AI (XAI) for fairness auditing and the application of advanced AI in meteorological science. We first explore the XAI methodologies that form the basis of our analytical approach. We then survey the state of AI-driven weather forecasting, focusing on the data and model architectures relevant to our study.
+
+\subsection{Foundations of Explainable AI and Fairness}
+
+Our research into fairness auditing is primarily based on the Anchors technique \cite{anchors-ribeiro}. While SHAP \cite{shap-lundberg} is the prevalent model-agnostic explanation method, we chose to focus on Anchors due to its novel formulation of high-precision, "if-then" rules and its under-explored potential. A key differentiator is its coverage metric, which quantifies the applicability of a local explanation to other instances in the dataset, providing a direct measure of a decision rule's generalizability.
+
+This exploration of XAI methods is applied to identify unfairness in models trained on demographic data. The Folktables dataset \cite{folktables-ding} provides a modern, well-structured benchmark for this task, moving beyond the limitations of older standards like UCI Adult. Furthermore, the term "anchor" appears in a distinct yet conceptually relevant context in data assimilation.
+
+\subsection{AI-Driven Weather Forecasting: Data and Models}
+
+The field of numerical weather prediction (NWP) is being revolutionized by AI models that offer unprecedented speed and competitive accuracy. Foundational studies like \cite{weather-forecasting-bi} and \cite{graph-cast-remi} demonstrate how deep learning architectures can outperform or complement traditional physics-based NWP systems, such as the operational integrated forecasting system (IFS) from the European Centre for Medium-Range Weather Forecasts (ECMWF).
+
+Our work is built upon the data produced by these traditional systems. We utilize high-resolution outputs from the AROME model, a limited-area forecasting system, and the global ARPÈGE model \cite{arpege}. Understanding the generation and synergy of this data is crucial. Research such as \cite{gan-arome-brochet} explores emulating AROME outputs with generative models, while \cite{arome-tc-unet-raynaud} successfully applies convolutional architectures like U-Net to specific prediction tasks, such as identifying tropical cyclone structures, directly from AROME forecasts.
+
+For our core model architecture, we focus on the UNETR++ \cite{unetrpp}. This model represents the state of the art in segmentation tasks, particularly in medical imaging, by combining the precise localization of a U-Net with the powerful representational capacity of a Vision Transformer (ViT). Its design is exceptionally well-suited for processing the high-dimensional, spatio-temporal data inherent in meteorological fields, making it a prime candidate for advancing data-driven weather prediction. The guide provided by \cite{guide-xai-bommer} offers a framework for evaluating XAI methods in climate science, ensuring our approach is grounded in domain-specific needs.
+
+\subsection{Explainability for Complex Models: From LLMs to Meteorology}
+The challenge of explaining complex, high-dimensional models is a pervasive issue across modern AI, extending far beyond our specific application to include Large Language Models (LLMs) and other deep learning systems. Our methodology is informed by the growing body of work aimed at peeling back the layers of these "black box" models. Applying eXplainable AI (XAI) techniques to such intricate systems, however, presents significant hurdles in selecting appropriate methods and evaluation metrics.
+
+To navigate this complexity, frameworks like the one provided by \cite{guide-xai-bommer} are essential. Focused on climate science, their work offers a crucial discussion on the application of XAI and proposes metrics for their evaluation. This guide highlights and assesses various techniques, including powerful gradient-based methods such as SmoothGrad \cite{smooth-grad-smilkov} and Integrated Gradients \cite{integrated-grad-sundararajan}.
+
+\begin{itemize}
+    \item Integrated Gradients attributes a model's prediction to its input features by integrating the gradients along a straight path from a baseline (e.g., a black image) to the actual input. It is renowned for satisfying axiomatic properties like completeness, ensuring the attributions sum to the difference in the model's output between the input and the baseline.
+    \item SmoothGrad tackles the visual noise often found in saliency maps by averaging multiple gradient maps computed on inputs with added Gaussian noise. This technique helps highlight the features the model robustly considers important, rather than artifacts resulting from infinitesimal input variations.
+\end{itemize}
+
+While these gradient-based methods are a cornerstone of the XAI landscape, our exploration was driven by the potential of a different path, inspired by a conceptual metaphor from numerical weather prediction itself. The work on variational bias correction (VarBC) \cite{varBC-francis} utilizes trusted "anchor observations" to correct for systematic biases in satellite data assimilation. This concept of using a reliable reference to ensure correctness powerfully resonates with the goal of XAI: to "anchor" model explanations in unbiased, factual reasoning and identify decision-making vulnerabilities.
+
+This metaphor directly motivated our focus on the Anchors technique \cite{anchors-ribeiro}. Our conviction to explore this less-traveled path was further strengthened by its successful adaptation to other complex domains. The work by \cite{anchors-sea-of-words-lopardo} provides a critical proof-of-concept, offering an in-depth analysis of Anchors for text data. Their research demonstrates the method's viability for generating interpretable, high-precision rules even within the complex, discrete feature space of language. This successful application on a fundamentally different data type strongly justifies our own investigation into adapting Anchors for the complex, spatial-temporal domain of meteorological imagery.
+

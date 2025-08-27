@@ -1,0 +1,135 @@
+\documentclass{beamer}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{animate}
+
+\usepackage{tikz}
+\usepackage{opensans}
+\usepackage[T1]{fontenc}
+\usepackage{fix-cm}
+\usetikzlibrary{shapes.geometric, positioning, calc}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\usetheme{default}
+\usecolortheme{rose}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{title}{fg=red!80!black}
+\setbeamercolor{author}{fg=gray!40!black}
+\setbeamercolor{frametitle}{fg=gray!20!black}
+
+\newcommand{\veryHuge}{\fontsize{40}{48}\selectfont}
+
+\input{Sections/templates.tex}
+
+\definecolor{color1}{RGB}{54, 69, 255} % blue
+\definecolor{color2}{RGB}{94,23,235} % purple
+\definecolor{color3}{RGB}{12, 192, 223} % cyan
+\definecolor{color4}{RGB}{193, 114, 80} % brown
+\definecolor{color5}{RGB}{143, 220, 187} % green
+\definecolor{color6}{RGB}{195, 63, 54} % red
+
+\title{Explainability of high-dimensional prediction models using neural networks}
+\author{DE QUEIROZ GARCIA, Luana}
+
+\addtobeamertemplate{footline}{
+  \ifnum\thepage>1
+    \begin{tikzpicture}[overlay,remember picture]
+      \node[anchor=south east] at (current page.south east) {
+        \includegraphics[width=3cm]{Images/logo_ensta.png}
+      };
+    \end{tikzpicture}
+  \fi
+}{}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page){\includegraphics[height=1\paperheight, keepaspectratio]{Images/background_ensta.png}};
+  \end{tikzpicture}
+  \vspace*{1cm}
+  \centering
+  \includegraphics[width=3cm]{Images/logo_ensta_vert.png}
+  
+  \vfill
+  
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+  \vspace{0.5cm}
+  {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
+  
+  \vfill
+\end{frame}
+
+\begin{frame}
+  \frametitle{}
+  \centering
+  This internship was a result of a partnership between:
+  \vfill
+  \includegraphics[width=2cm]{Images/logo_ensta_vert.png}
+  \hspace{1cm}
+  \includegraphics[width=3.5cm]{Images/inria_logo.png}
+  \vfill
+  \includegraphics[width=3cm]{Images/logo_imt.png}
+  \hspace{1cm}
+  \includegraphics[width=2.5cm]{Images/logo_meteo_france.png}
+  
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+    \centering
+    \begin{tikzpicture}[scale=0.8, transform shape]
+        % First row
+        \foreach \x/\num/\text/\col in {0/1/Introduction/color1, 4/2/XAI and Fairness/color2, 8/3/XAI and Meteo/color3} {
+        \node[diamond, draw=gray!50, line width=4pt, fill=none, minimum size=3cm] at (\x,0) {\Huge\textcolor{\col}{\textbf{\num}}};
+        \node[below=0.8cm, rectangle, fill=white, minimum width=3cm, 
+                minimum height=0.5cm, anchor=center] at (\x,0) {\textcolor{\col}{\bfseries \text}};
+        }
+        
+        % Second row  
+        \foreach \x/\num/\text/\col in {0/4/Results/color4, 4/5/Discussion/color5, 8/6/Conclusion/color6} {
+        \node[diamond, draw=gray!50, line width=4pt, fill=none, minimum size=3cm] at (\x,-4) {\Huge\textcolor{\col}{\textbf{\num}}};
+        \node[below=0.8cm, rectangle, fill=white, minimum width=3cm, 
+                minimum height=0.5cm, anchor=center] at (\x,-4) {\textcolor{\col}{\bfseries \text}};
+        }
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay,remember picture]
+        \fill[gray!50] (current page.west) -- 
+            ([yshift=1cm]current page.west) -- 
+            ([xshift=1cm]current page.west) -- 
+            ([yshift=-1cm]current page.west) -- cycle;
+    \end{tikzpicture}
+\end{frame}
+
+\include{Sections/introduction.tex}
+
+\include{Sections/xai_fairness}
+
+\include{Sections/xai_meteo}
+
+\include{Sections/results}
+
+\include{Sections/discussion}
+
+\include{Sections/conclusion}
+
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page){\includegraphics[height=1\paperheight, keepaspectratio]{Images/background_ensta.png}};
+  \end{tikzpicture}
+  \vspace*{1cm}
+  \centering
+  
+  \vfill
+  
+  Merci!
+  
+  \vfill
+\end{frame}
+
+\end{document}

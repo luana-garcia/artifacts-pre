@@ -1,0 +1,43 @@
+\subjectPresentation{2}{XAI for the USA Census}{color2}
+
+\subjectDevelopment{Analyse Fairness on the USA Census}{
+	\begin{itemize}
+		\item Can we find bias in the ML models?
+		\item If so, can we use XAI to identify where's the problem?
+	\end{itemize}
+	\vfill
+	\centering
+	We used the 'SEX' as the sensible variable.
+}{color2}
+
+\subjectDevelopment{Trained Models}{
+\begin{itemize}
+	\item \textbf{Logistic Regression}
+	
+    \item \textbf{XGBoost} (eXtreme Gradient Boosting)
+	
+	\item \textbf{Hist Gradient Boosting} (Skrub's Scikit-learn implementation)
+	
+	\item \textbf{Simple Neural Network}
+\end{itemize}
+}{color2}
+
+\subjectDevelopment{Fairness Metrics}{
+\begin{itemize}
+	\item \textbf{Accuracy}: The proportion of correct predictions (both true positives and true negatives) among all predictions.
+
+	\item \textbf{Disparate Impact (DI)}: Measures the ratio between the \textbf{proportion of positive outcomes for the protected group (women) versus the privileged group (men)}. Values close to 1 indicate fairness, while values below 1 suggest bias against the protected group.
+
+	\item \textbf{Equality of Odds}: Examines whether both groups have equal true positive rates and equal false positive rates. Values closer to 1 indicate better fairness.
+
+	\item \textbf{Sufficiency}: Assesses whether the probability of the true outcome is the same across groups given the predicted outcome. Values closer to 1 indicate better fairness.
+\end{itemize}
+}{color2}
+
+\subjectDevelopment{Performance and Fairness metrics}{
+\input{Sections/assets/forktables_model_performaces.tex}
+}{color2}
+
+\subjectDevelopment{Applying Anchors}{
+Our focus is on Meteo today, so it's just important to know that our results found zones in the population with high indication of unfairness.
+}{color2}

@@ -1,0 +1,31 @@
+\newcommand{\subjectPresentation}[3]{ % section nb, section name, section color
+  \begin{frame}
+    \frametitle{}
+    \centering
+    \begin{tikzpicture}
+      \node[diamond, draw=gray!50, line width=8pt, fill=none, minimum size=6cm] (n) 
+            {\veryHuge\textcolor{#3}{\textbf{#1}}};
+      \node[below=-1.2cm of n, rectangle, fill=white, minimum width=5cm, 
+            minimum height=1cm, anchor=center, text=#3, 
+            font=\LARGE\bfseries] {#2};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay,remember picture]
+      \fill[#3] (current page.south west) -- 
+            (current page.north west) -- 
+            ([xshift=0.3\paperwidth]current page.south west) -- cycle;
+    \end{tikzpicture}
+  \end{frame}
+}
+
+\newcommand{\subjectDevelopment}[3]{ % title, text, color
+  \begin{frame}
+    \frametitle{#1}
+    #2
+    \begin{tikzpicture}[overlay,remember picture]
+      \fill[#3!50!white] (current page.west) -- 
+            ([yshift=0.7cm]current page.west) -- 
+            ([xshift=0.7cm]current page.west) -- 
+            ([yshift=-0.7cm]current page.west) -- cycle;
+    \end{tikzpicture}
+  \end{frame}
+}

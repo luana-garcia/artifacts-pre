@@ -1,0 +1,32 @@
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{Images/pca/pca_xg_tx_anchors.png}
+        \caption{Model: XGBoost, XAI method: Anchors}
+        \label{fig:pca_xg_tx_anchors}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{Images/pca/pca_skrub_tx_anchors.png}
+        \caption{Model: HistGradientBoosting, XAI method: Anchors}
+        \label{fig:pca_skrub_tx_anchors}
+    \end{subfigure}
+    \caption{PCA of the test dataset in the Texas state (Part 1)}
+ \end{figure}
+
+\begin{figure}[h]
+    \ContinuedFloat
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{Images/pca/pca_xg_tx_shap.png}
+        \caption{Model: XGBoost, XAI method: SHAP}
+        \label{fig:pca_xg_tx_shap}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{Images/pca/pca_skrub_tx_shap.png}
+        \caption{Model: HistGradientBoosting, XAI method: SHAP}
+        \label{fig:pca_skrub_tx_shap}
+    \end{subfigure}
+    \caption{PCA of the test dataset in the Texas state (Part 2)}
+    \label{fig:pca_tx}
+\end{figure}

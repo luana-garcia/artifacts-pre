@@ -1,0 +1,29 @@
+\selectlanguage{english}
+
+\begin{abstract}
+The increasing complexity of machine learning models, particularly deep neural networks for weather forecasting and large language models, has created a critical need for robust Explainable AI (XAI) techniques. These "black box" models operate on high-dimensional data, making it difficult to understand their predictions and trust their outputs. This work evaluates the effectiveness of XAI methods, specifically the Anchors technique, in providing actionable insights across two diverse data domains: tabular data for fairness auditing and high-dimensional meteorological data for weather prediction.
+
+We adopt a two-tiered methodology. First, we apply Anchors to the Folktables dataset to audit a binary income classifier, demonstrating its ability to identify precise, high-precision rules that reveal model vulnerabilities and biases, such as a reliance on sensitive attributes like gender. This provides a granular understanding of discriminatory mechanisms, a crucial step towards targeted bias mitigation. Second, we adapt and extend the Anchors framework for regression tasks to analyze a UNetR++ model trained on the Titan meteorological dataset. Our method successfully pinpoints the most influential spatial regions and variables (e.g., wind patterns, precipitation) for specific forecasts, transforming Anchors into a tool for regional influence analysis and proactive vulnerability mapping for extreme weather events.
+
+Our results show that the Anchors method provides focused, direct, and actionable insights regardless of data complexity. It proves to be a versatile tool not only for diagnosing societal biases in algorithms but also for auditing the physical reasoning of complex forecasting models. This work establishes a foundation for using example-based explainability as a guide for actionable intervention, enhancing trust and providing a pathway for improvement in both technical and societal systems.
+\end{abstract} \hspace{10pt}
+\keywords{Explainable AI (XAI), Anchors, Model Interpretability, Fairness in Machine Learning, Meteorological Forecasting, High-Dimensional Data, Bias Detection.}
+
+\selectlanguage{french}
+
+\begin{abstract}
+La complexité croissante des modèles d'apprentissage automatique, en particulier des réseaux de neurones profonds pour la prévision météorologique et des grands modèles de langage, a créé un besoin critique de techniques robustes d'IA explicable (XAI). Ces modèles « boîte noire » traitent des données à haute dimensionnalité, ce qui rend difficile la compréhension de leurs prédictions et la confiance dans leurs sorties. Ce travail évalue l'efficacité des méthodes XAI, en particulier la technique Anchors, à fournir des insights actionnables dans deux domaines de données divers : les données tabulaires pour l'audit de l'équité et les données météorologiques à haute dimensionnalité pour la prévision du temps.
+
+Nous adoptons une méthodologie à deux niveaux. Premièrement, nous appliquons Anchors au jeu de données Folktables pour auditer un classificateur binaire de revenu, démontrant sa capacité à identifier des règles précises et à haute précision qui révèlent les vulnérabilités et les biais du modèle, tels qu'une dépendance à des attributs sensibles comme le genre. Cela fournit une compréhension granulaire des mécanismes discriminatoires, une étape cruciale vers une atténuation ciblée des biais. Deuxièmement, nous adaptons et étendons le cadre Anchors pour les tâches de régression afin d'analyser un modèle UNetR++ entraîné sur le jeu de données météorologiques Titan. Notre méthode identifie avec succès les régions spatiales et les variables les plus influentes (par exemple, les régimes de vent, les précipitations) pour des prévisions spécifiques, transformant Anchors en un outil d'analyse d'influence régionale et de cartographie proactive de la vulnérabilité pour les événements météorologiques extrêmes.
+
+Nos résultats montrent que la méthode Anchors fournit des insights focalisés, directs et actionnables, indépendamment de la complexité des données. Elle s'avère être un outil polyvalent, non seulement pour diagnostiquer les biais sociétaux dans les algorithmes, mais aussi pour auditer le raisonnement physique de modèles de prévision complexes. Ce travail établit une base pour utiliser l'explicabilité basée sur des exemples comme guide pour une intervention actionable, améliorant la confiance et offrant une voie d'amélioration pour les systèmes techniques et sociétaux.
+\end{abstract} \hspace{10pt}
+\keywords{IA Explicable (XAI), Anchors, Interprétabilité des modèles, Équité en apprentissage automatique, Prévision météorologique, Données à haute dimensionnalité, Détection de biais.}
+
+\renewcommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Mots clés---}} #1
+}
+
+\selectlanguage{english}

@@ -1,0 +1,32 @@
+\section{Introduction}
+
+The use of machine learning, particularly through deep neural network models, has recently revitalized various fields of mathematical engineering. Notably, the domain of weather forecasting has seen the emergence of new players from the world of machine learning \cite{graph-cast-remi} \cite{weather-forecasting-bi}, whose predictive model quality approaches that of traditional weather forecasting models. However, models resulting from this work, such as GraphCast, are highly complex and handle very high-dimensional data. As a result, it is currently very difficult to assess the criteria on which they base their predictions, which may limit confidence in their forecasts. These models can be likened to Large Language Models (LLMs), sharing many architectural similarities and exhibiting comparable complexities.  
+
+As part of this internship, we will evaluate the relevance of eXplainable AI (XAI) methods for high-dimensional AI predictions. To systematically assess the robustness and limitations of these techniques, we adopt a two-tiered approach. First, we apply XAI methods to a simpler, well-understood domain: supervised classification on tabular data (using the Folktables dataset). This allows us to benchmark the methods' ability to identify biases and vulnerabilities, such as reliance on sensitive attributes like gender. Second, we leverage these insights to tackle the core challenge: applying and adapting XAI techniques to complex, high-dimensional meteorological data from the MeteoNet project \cite{meteo-net}. The ultimate goal is to determine if these methods can uncover the learned concepts, mechanisms, and potential failure points within complex deep learning models used for weather prediction.
+
+The first stage of the internship involved familiarizing ourselves with different forecasting models, understanding their underlying mechanisms, and assessing the quality of their predictions, as well as applying fairness metrics to tabular data to detect bias. Following an approach similar to \cite{guide-xai-bommer}, we then evaluated various explainability methods on both data types, generalizing the methodology (\cite{guide-xai-bommer}). We developed methods based on concept and anchor creation to assess their stability and determine whether we can uncover learned concepts or mechanisms within the network that help better understand its functioning.
+
+The internship will take place at INRIA Paris in collaboration with the Institute of Mathematics of Toulouse (IMT), under the supervision of Jean-Michel Loubes (INRIA), Benoit Rottembourg (INRIA), and Laurent Risser (ANITI).
+
+\subsection{Objectives and division of the report}
+
+The primary objective of this research is to conduct a comprehensive analysis of explainable AI methods (XAI) for complex data, developed at INRIA Paris, and evaluate how to use these different methods across diverse data types. A core aim is to test their ability to reveal vulnerabilities, such as spurious correlations or reliance on sensitive features, in both simple and complex models. Specific objectives include:
+
+\begin{itemize}
+    \item To analyse model fairness using standard metrics.
+    \item To apply and evaluate Anchors XAI on tabular data to audit model fairness and identify biases.
+    \item To understand the structure and challenges of meteorological and image data.
+    \item To understand the differences between Anchors-based explanations applied on classification and regression.
+    \item To develop and adapt methods for applying XAI techniques to high-dimensional meteorological data.
+\end{itemize}
+
+This report is structured into the following sections to systematically address the research objectives:
+
+\begin{itemize}
+    \item \textbf{Introduction}: Provides background on the challenges of interpretability in high-dimensional models like weather forecasting and introduces the need for explainable AI (XAI) methods to enhance trust and understanding. It outlines the strategy of using tabular data as a controlled testbed before tackling meteorological complexity.
+    \item \textbf{Literature Review}: Surveys existing XAI techniques (e.g., concept-based explanations, anchors, attention mechanisms) and their applications in climate science and fairness auditing.
+    \item \textbf{Methodology}: Describes the datasets (Titan and Folktables), models (e.g., deep neural networks, classical machine learning algorithms), and XAI techniques tested (e.g., SHAP, Anchors, and gradient-based approaches) for both data domains.
+    \item \textbf{Results}: Presents the findings from the research, including the effectiveness of XAI in identifying bias in tabular data and the outputs, challenges, and initial results of applying XAI to meteorological models.
+    \item \textbf{Discussion}: Interprets the results, discussing the transferability of insights from tabular to complex data, the implications for model trustworthiness, and the comparative strengths of different XAI methods.
+    \item \textbf{Conclusion}: Summarizes the key findings on the utility of XAI for uncovering model vulnerabilities, emphasizes the importance of the study, and provides recommendations for future research in applying XAI to complex domains.
+\end{itemize}

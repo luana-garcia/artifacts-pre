@@ -1,0 +1,55 @@
+\begin{table}[h]
+    \centering
+    \caption{Model Performance Comparison Across States}
+    \label{tab:folktables-results}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{llcccccc}
+        \toprule
+        \textbf{Model} & \textbf{Training} & \textbf{Testing} & \textbf{Accuracy} & \textbf{Disparate Impact} & \textbf{Equality of Odds} & \textbf{Sufficiency} \\
+        \midrule
+        \rowcolor{gray!10}
+        Logistic Regression
+        & CA & CA & 0.56 & 0.67 & 0.84 & 0.95 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & TX & TX & 0.52 & 0.46 & 0.65 & 0.90 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & NY & NY & 0.51 & 0.66 & 0.82 & 0.93 \\
+        \midrule
+
+        \rowcolor{gray!10}
+        XGBoost
+        & CA & CA & 0.64 & 0.72 & 0.91 & 0.96 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & TX & TX & 0.60 & 0.58 & 0.83 & 0.93 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & NY & NY & 0.61 & 0.75 & 0.92 & 0.96 \\
+        \midrule
+
+        \rowcolor{gray!10}
+        \textbf{HistGradientBoosting}
+        & CA & CA & 0.63 & 0.71 & 0.90 & 0.94 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & \textbf{TX} & \textbf{TX} & \textbf{0.61} & \textbf{0.54} & 0.78 & 0.96 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & NY & NY & 0.60 & 0.68 & 0.89 & 0.97 \\
+        \midrule
+
+        \rowcolor{gray!10}
+        Neural Network
+        & CA & CA & 0.52 & 0.88 & 1.03 & 0.85 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & TX & TX & 0.50 & 0.61 & 0.87 & 0.94 \\
+        \cmidrule(lr){2-7}
+        \rowcolor{gray!10}
+        & NY & NY & 0.51 & 0.76 & 0.93 & 0.92 \\
+        \bottomrule
+        \end{tabular}%
+    }
+\end{table}
