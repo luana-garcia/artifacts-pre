@@ -1,0 +1,13 @@
+*.aux
+*.log
+*.fls
+*.out
+*.snm
+*.syntectex.gz
+*.toc
+*.bbl
+*.fdb_latexmk
+*.nav
+*.lof
+
+build/*
