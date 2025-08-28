@@ -38,6 +38,52 @@
 \input{Sections/assets/forktables_model_performaces.tex}
 }{color2}
 
-\subjectDevelopment{Applying Anchors}{
-Our focus is on Meteo today, so it's just important to know that our results found zones in the population with high indication of unfairness.
+\subjectDevelopment{Model Performance}{
+\begin{figure}[h]
+    \centering
+	\vspace{-0.2cm}
+	\includegraphics[width=0.45\textwidth]{Images/curve_roc_folktables/roc_curve_TX_lr.png}
+	\hfill
+	\includegraphics[width=0.45\textwidth]{Images/curve_roc_folktables/roc_curve_TX_xgb.png}
+    \hfill
+	\includegraphics[width=0.45\textwidth]{Images/curve_roc_folktables/roc_curve_TX_skrub.png}
+	\hfill
+	\includegraphics[width=0.45\textwidth]{Images/curve_roc_folktables/roc_curve_TX_NN.png}
+    \caption{Comparison of the models trained on the sub dataset of the Texas state}
+    \label{fig:roc_tx}
+\end{figure}
+}{color2}
+
+\subjectDevelopment{Applying XAI}{
+\begin{itemize}
+	\item We will refer to a \textbf{gendered anchor} when the generated Anchors explanation contains 'SEX' in its list of features, which is the sensitive variable we are analysing.
+	\item  In a similar way, we will refer to \textbf{gendered SHAP values} when the generated SHAP explanation contains 'SEX' at the top of the feature ranking.
+\end{itemize}
+}{color2}
+
+\subjectDevelopment{Distribution of Gendered Anchors (Anchors vs SHAP)}{
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=\textwidth]{Images/folktables/distr_skrub_tx_anchors.png}
+\end{figure}
+}{color2}
+
+\subjectDevelopment{Distribution of Gendered SHAP values}{
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=\textwidth]{Images/folktables/distr_skrub_tx_shap.png}
+\end{figure}
+}{color2}
+
+\subjectDevelopment{What does it mean?}{
+	It was interesting to see how many explanations contained gendered explanations, meaning that the technique identified that feature as decisive for the prediction. 
+\begin{itemize}
+	\item With Anchors this implies that if the value of 'SEX' changes, the prediction changes too.
+	\item We can also notice that the gendered explanations are divided mainly between \textbf{women with a false model prediction}, low income, and \textbf{men with a true prediction}, high income.
+	\item \textbf{This reaffirms what the DI metric was showing:} this imbalance in the proportion of True predictions for the protected group versus the privileged group.
+\end{itemize}
+}{color2}
+
+\subjectDevelopment{What can we do to go further in the investigation?}{
+Analyse the profile of the test dataset to see how the Anchors and SHAP explanations are \textbf{organized across different groups of people}. To understand better the demographic problem in our study case.
 }{color2}
